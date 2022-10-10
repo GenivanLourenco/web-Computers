@@ -34,6 +34,7 @@ export class CarrinhoComponent implements OnInit {
 
 
   removeCarrinho(produtoId: number) {
+    this.NotificacaoService.notificar('Produto Removido com sucesso!');
     this.itensCarrinho = this.itensCarrinho.filter(item => item.id !== produtoId);
     this.carrinhoService.removeCarrinho(produtoId);
     this.calculaTotal();
